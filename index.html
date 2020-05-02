@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/21df2a399d.js" crossorigin="anonymous"></script>
+  <title>Lista de tarefas</title>
+  
+</head>
+
+<body>
+
+  <div class="container borda">
+
+    <section id="titulo">
+      <h1>Lista de tarefas</h1>
+      <p class="t1">Escreva no input text para adicionar itens à sua lista</p>
+      <p class="t2">Clique no item para marcar como "completo"</p>
+      <p class="t3">Clique no "X" para deletar o item</p>
+    </section>
+
+    <section id="tarefas">
+      <form onsubmit="return false;">
+        <input id="tarefa-input" type="text" placeholder="Nova tarefa...">
+        <button type="submit" class="enviar" onclick="criarTarefa(), botaoDeletar(), completarTarefa()">
+          <span class="fas fa-pen"></span>
+        </button>
+      </form>
+    </section>
+
+    <section id="lista">
+      
+    </section>
+
+  </div>
+  
+  <script src="app.js"></script>
+
+</body>
+
+</html>
