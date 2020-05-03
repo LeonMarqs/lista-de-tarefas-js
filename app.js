@@ -1,4 +1,3 @@
-
 for (var i = 0; i < window.localStorage.length; i++) {
   texto = window.localStorage.getItem(window.localStorage.key(i));
 
@@ -17,7 +16,7 @@ for (var i = 0; i < window.localStorage.length; i++) {
     div.appendChild(button);
 
     botaoDeletar(document.getElementById(key));
-    completarTarefa(lista = document.getElementById(`${key}-lista`)) 
+    completarTarefa(lista = document.getElementById(`${key}-lista`));
 };
 
 function criarTarefa(texto = document.getElementById('tarefa-input')) {
@@ -51,7 +50,6 @@ function criarTarefa(texto = document.getElementById('tarefa-input')) {
 
 function botaoDeletar(i = document.getElementById(token)) {
 
-
   i.addEventListener("click", function(e) {
     e.stopPropagation();
     window.localStorage.removeItem(i.id);
@@ -65,10 +63,3 @@ function completarTarefa(lista = document.getElementById(`${token}-lista`)) {
     lista.className = 'lista-tarefas tarefa-concluida';
   });
 };
-
-
-
-
-
-
-
