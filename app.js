@@ -3,17 +3,17 @@ for (var i = 0; i < window.localStorage.length; i++) {
 
     let key = window.localStorage.key(i);
     let lista = document.getElementById('lista');
-    let div = document.createElement('div');
-    let button = document.createElement('i');
+    const DIV = document.createElement('div');
+    const BUTTON = document.createElement('i');
 
-    div.className = 'lista-tarefas tarefa-incompleta';
-    div.innerHTML = texto;
-    button.className = 'fas fa-times';
-    button.id = key;
-    div.id = `${key}-lista`;
+    DIV.className = 'lista-tarefas tarefa-incompleta';
+    DIV.innerHTML = texto;
+    BUTTON.className = 'fas fa-times';
+    BUTTON.id = key;
+    DIV.id = `${key}-lista`;
 
-    lista.appendChild(div);
-    div.appendChild(button);
+    lista.appendChild(DIV);
+    DIV.appendChild(BUTTON);
 
     botaoDeletar(document.getElementById(key));
     completarTarefa(lista = document.getElementById(`${key}-lista`));
@@ -28,7 +28,7 @@ function criarTarefa(texto = document.getElementById('tarefa-input')) {
   token = tokenGenerator();
 
   if(texto.value != '') {
-    let lista = document.getElementById('lista');
+    let lista = document.querySelector('section[id=lista]');
     let div = document.createElement('div');
     let i = document.createElement('i');
 
@@ -45,7 +45,6 @@ function criarTarefa(texto = document.getElementById('tarefa-input')) {
     
     texto.value = '';
   };
-  console.log(token);
 };
 
 function botaoDeletar(i = document.getElementById(token)) {
@@ -59,7 +58,5 @@ function botaoDeletar(i = document.getElementById(token)) {
 };
 
 function completarTarefa(lista = document.getElementById(`${token}-lista`)) {
-  lista.addEventListener("click", function(e) {
-    lista.className = 'lista-tarefas tarefa-concluida';
-  });
+  lista.addEventListener("click", function alterarClasse() {this.className = 'lista-tarefas tarefa-concluida'})
 };
